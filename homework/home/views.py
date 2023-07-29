@@ -1,3 +1,14 @@
+import logging
 from django.shortcuts import render
 
-# Create your views here.
+logger = logging.getLogger(__name__)
+
+
+def index(request):
+    logger.info('Index page accessed')
+    return render(request, 'home/home.html')
+
+
+def about(request):
+    logger.info('Index page accessed')
+    return render(request, 'home/about.html')
