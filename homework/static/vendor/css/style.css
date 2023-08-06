@@ -1,3 +1,12 @@
 body{
     background-color: #f0f3ed;
 }
+
+.goods{
+    font-size: 26px;
+    color: white;
+}
+.goods:hover{
+    color: #f5d8e2;
+
+}
