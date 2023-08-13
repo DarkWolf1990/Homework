@@ -1,11 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>About us</title>
+{% extends 'base.html' %}
+{% load static %}
+
+   {% block title %} <title>About us</title> {% endblock %}
 </head>
 <body>
-<h1>This page About US</h1>
-<a href="/">home page</a>
+{% block content %}
+    <div class="cont">
+<h1 class="h1 text_h1">This page About US</h1>
+<a href="">home page</a>
+    </div>
+{% endblock %}
 </body>
 </html>

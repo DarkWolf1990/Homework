@@ -1,5 +1,5 @@
 from django import forms
 
 
-class ImageForm(forms.Form):
-    upload = forms.ImageField()
+class FileForm(forms.Form):
+    upload = forms.FileField()

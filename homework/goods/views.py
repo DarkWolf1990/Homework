@@ -1,21 +1,24 @@
 from django.core.files.storage import FileSystemStorage
 from django.shortcuts import render
 
-from .forms import ImageForm
+from .forms import FileForm
 
 
 # Create your views here.
-def goods(request):
-    return render(request, 'goods/goods.html')
-
-
-def upload_image(request):
-    if request.method == 'POST':
-        form = ImageForm(request.POST, request.FILES)
-        if form.is_valid():
-            upload = form.cleaned_data['upload']
-            fs = FileSystemStorage()
-            fs.save(upload.name, upload)
+def good_prod(request, good):
+    if request == 'GET':
+        if good == 'goods':
+            return render(request, 'goods/goods.html')
     else:
-        form = ImageForm()
-    return render(request, 'goods/upload_image.html', {'form': form})
+        return f"this error"
+
+# def upload_file(request):
+#     if request.method == 'POST':
+#         form = FileForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             upload = form.cleaned_data['upload']
+#             fs = FileSystemStorage()
+#             fs.save(upload.name, upload)
+#     else:
+#         form = FileForm()
+#     return render(request, 'goods/upload_file.html', {'form': form})

@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-from .views import index, about
+from home import views
 
 urlpatterns = [
-    path('', index, name='index'),
-    path('about/', about, name='about'),
+    path('', views.get_page, name='get_page'),
+
 ]
