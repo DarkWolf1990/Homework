@@ -1,17 +1,42 @@
+ {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-  {% block title %} <title>Title</title> {% endblock %}
-
+  {% block title %} <title>DW_Tour</title> {% endblock %}
+ {% block css %}
             <!-- Bootstrap core CSS -->
-    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+          href="{% static '/vendor/bootstrap/css/bootstrap.min.css' %}">
         <!-- Custom styles for this template -->
-        <link rel="stylesheet" href="/static/vendor/css/style.css">
-
+        <link rel="stylesheet" href=" {% static '/vendor/css/style.css' %}">
+{% endblock %}
 </head>
 <body>
-{% block nav %} {% endblock %}
-{% block content %} {% endblock %}
+<div class="container">
+
+    {% block menu %}
+        {% include 'home/includes/inc_menu.html' %}
+    {% endblock %}
+
+    {% block list %}
+
+    {% endblock %}
+
+    {% block content %}
+
+    {% endblock %}
+
+</div>
+
+
 </body>
+<footer>
+    {% block footer %}
+{% include 'home/includes/inc_footer.html' %}'
+{% endblock %}
+</footer>
+{% block js %}
+<script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+{% endblock %}
 </html>
