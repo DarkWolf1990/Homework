@@ -1,8 +1,11 @@
 from django.contrib import admin
 from django.urls import path
-from home import views
+import home.views as homeapp
+
+app_name = 'homeapp'
 
 urlpatterns = [
-    path('', views.get_page, name='get_page'),
+    path('', homeapp.get_page, name='get_page'),
+    path('accommodation_details/<int:pk>/', homeapp.accommodation, name='accommodation'),
 
 ]
