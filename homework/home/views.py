@@ -1,6 +1,9 @@
 import logging
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 from .models import Accommodation
+from .models import ListOfCountries
+
 logger = logging.getLogger(__name__)
 
 
@@ -26,3 +29,13 @@ def accommodations(request):
     }
 
     return render(request, 'home/accommodations.html', content)
+
+
+def accommodation(request, pk):
+    title = 'продукты'
+
+    content = {
+        'title': title,
+        'accommodation': get_object_or_404(Accommodation, pk=pk),
+    }
+    return render(request, 'home/accommodation_details.html', content)
